@@ -1,3 +1,5 @@
+//This code is made by copying codes from a bunch of guids online. 
+
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <Arduino_JSON.h>
@@ -14,20 +16,20 @@ Adafruit_PCD8544 display = Adafruit_PCD8544(12,11,3,2,1);
 DHT dht(DHTPIN, DHTTYPE);
 
 
-const char* ssid = "hurmee";
-const char* password = "133773311337";
+const char* ssid = "xxxx";
+const char* password = "xxxx";
 
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = 7200;
 const int   daylightOffset_sec = 3600;
 
 // Your Domain name with URL path or IP address with path
-String openWeatherMapApiKey = "48a0fe71fbe106ad2887fcf32591906e";
+String openWeatherMapApiKey = "InsertAPI";
 
 
 // Replace with your country code and city
-String city = "Helsinki";
-String countryCode = "FI";
+String city = "InsertCity";
+String countryCode = "Insert country code";
 
 // THE DEFAULT TIMER IS SET TO 10 SECONDS FOR TESTING PURPOSES
 // For a final application, check the API call limits per hour/minute to avoid getting blocked/banned
@@ -74,7 +76,7 @@ void setup() {
   
 }
 
-void printLocalTime()
+void printOnNokia()
 {
   struct tm timeinfo;
   if(!getLocalTime(&timeinfo)){
@@ -152,7 +154,7 @@ void loop() {
     lastTime = millis();
   }
       Serial.print("Am I here?");
-      printLocalTime();
+      printOnNokia();
 
 }
 
